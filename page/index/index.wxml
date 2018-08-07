@@ -1,0 +1,28 @@
+
+<!--page/index/index.wxml-->
+<view>
+
+<form catchsubmit="formSubmit">
+  <view class="weui-flex order">
+    <input  name="info" placeholder="商品名称" class="weui-flex__item" />
+    <button formType="submit" class="weui-btn" size="mini" type="primary">去下单</button>
+  </view>
+</form>
+<view class="weui-flex">
+  <navigator url="/page/buy/index" class="weui-flex__item navigator" hover-class="navigator-hover" open-type="switchTab">
+    <view>
+      <image src="/assets/images/Home_Buy@2x.png" />
+    </view>
+    <view class="navigator__title">代我买</view>
+    <view class="navigator__desc">生活用品, 夜宵, 快餐</view>
+  </navigator>
+  <navigator url="/page/send/index" class="weui-flex__item navigator" hover-class="navigator-hover" open-type="switchTab">
+    <view>
+      <image src="/assets/images/Home_Take@2x.png" />
+    </view>
+    <view class="navigator__title">代我送</view>
+    <view class="navigator__desc">礼品, 鲜花, 蛋糕</view>
+  </navigator>
+</view>
+
+</view>

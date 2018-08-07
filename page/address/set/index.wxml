@@ -1,0 +1,27 @@
+<!--page/buy/address/index.wxml-->
+
+<form catchsubmit="formSubmit">
+  <view class="weui-cells">
+    <view hover="true" hover-class="weui-cell_active" class="weui-cell weui-cell_select" catchtap="chooseLocation">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">{{name}}</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-select weui-select_no-border weui-select_in-select-after">
+          {{address_name}}
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">门牌号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input value="{{detail}}" name="detail" class="weui-input" placeholder="请输入门牌号等详细信息" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" disabled="{{loading}}" loading="{{loading}}" type="primary" formType="submit">确定</button>
+  </view>
+</form>

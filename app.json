@@ -1,0 +1,61 @@
+{
+  "pages":[
+    "page/index/index",
+    "page/buy/index",
+    "page/send/index",
+    "page/my/index",
+    "page/phone/index",
+    "page/order/show/index",
+    "page/order/list/index",
+    "page/address/set/index",
+    "page/address/add/index",
+    "page/address/list/index",
+    "page/address/select/index",
+    "page/info/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#25a1fa",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"#fff"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#25a1fa",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "iconPath": "assets/images/Tabbar_Home@2x.png",
+        "selectedIconPath": "assets/images/Tabbar_Home_s@2x.png",
+        "text": "向导"
+      },
+      {
+        "pagePath": "page/buy/index",
+        "iconPath": "assets/images/Tabbar_Buy@2x.png",
+        "selectedIconPath": "assets/images/Tabbar_Buy_Pre@2x.png",
+        "text": "去买"
+      },
+      {
+        "pagePath": "page/send/index",
+        "iconPath": "assets/images/Tabbar_Tran@2x.png",
+        "selectedIconPath": "assets/images/Tabbar_Tran_Pre@2x.png",
+        "text": "去送"
+      },
+      {
+        "pagePath": "page/my/index",
+        "iconPath": "assets/images/Tabbar_My@2x.png",
+        "selectedIconPath": "assets/images/Tabbar_My_s@2x.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

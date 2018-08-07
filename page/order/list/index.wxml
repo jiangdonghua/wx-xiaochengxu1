@@ -1,0 +1,28 @@
+
+<!--page/order/list/index.wxml-->
+<view class="order-list">
+  <navigator url="/page/order/show/index?id={{item.order_id}}" class="order-item order-item_{{TYPE[item.type]}}" wx:for="{{items}}" wx:key="order_id">
+    <view class="order-item__status">{{item.status_label}}</view>
+    <view class="order-item__hd">
+      <view>
+        <view class="order-item__type"></view>
+      </view>
+      <view class="order-item__goods-info">{{item.good_info}}</view>
+      <view class="order-item__addtime">{{item.add_time_format}}</view>
+    </view>
+    <view class="order-item__bd">
+      <view wx:if="{{item.start_address != item.end_address}}">{{START_LABEL[item.type]}}: {{item.start_address}}</view>
+      <view>收货地址: {{item.end_address}}</view>
+    </view>
+  </navigator>
+</view>
+<view wx:if="{{loading}}" class="weui-loadmore">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view>
+<view wx:elif="{{hasMore}}" class="weui-loadmore weui-loadmore_line">
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line">加载更多</view>
+</view>
+<view wx:else class="weui-loadmore weui-loadmore_line">
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多数据</view>
+</view>

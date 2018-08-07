@@ -1,0 +1,53 @@
+<import src="../template/address.wxml" />
+<import src="../template/price.wxml" />
+
+<!--page/send/send.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="weui-cells">
+    <navigator url="/page/info/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">物品信息</view>
+      <view class="{{info? '' : 'weui-cell__ft'}} weui-cell__ft_in-access">
+        {{info || "类型, 重量, 价值"}}
+      </view>
+    </navigator>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input name="content" class="weui-input" placeholder="想对跑腿说什么(选填)" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells">
+    <navigator url="/page/address/set/index?from=fromAddress&name=发货地址" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">发货地址</view>
+      <view class="weui-cell__bd">
+        <template wx:if="{{fromAddress}}" is="addressInfo" data="{{...fromAddress}}" />
+      </view>
+      <view class="weui-cell__ft  weui-cell__ft_in-access">
+        {{fromAddress ? '': '请选择发货地址(必填)'}}
+      </view>
+    </navigator>
+    <navigator url="/page/address/set/index?from=toAddress&name=收货地址" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">收货地址</view>
+      <view class="weui-cell__bd">
+        <template wx:if="{{toAddress}}" is="addressInfo" data="{{...toAddress}}" />
+      </view>
+      <view class="weui-cell__ft  weui-cell__ft_in-access">
+        {{toAddress ? '': '请选择收获地址(必填)'}}
+      </view>
+    </navigator>
+  </view>
+  <view class="weui-cells">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收货人</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="send_finish_key_phones" class="weui-input" placeholder="收货人手机号(选填)" />
+      </view>
+    </view>
+  </view>
+  <template wx:if="{{priceInfo}}" is="priceInfo" data="{{...priceInfo}}" />
+  <view class="weui-btn-area">
+    <button class="weui-btn" disabled="{{loading || !priceInfo}}" loading="{{loading}}" type="primary" formType="submit">呼叫跑腿</button>
+  </view>
+</form>

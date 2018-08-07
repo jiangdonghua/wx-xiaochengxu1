@@ -1,0 +1,46 @@
+<import src="../template/address.wxml" />
+<import src="../template/price.wxml" />
+
+<!--page/buy/index.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="weui-cells">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">商品信息</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input value="{{good_info}}" name="good_info" class="weui-input" placeholder="请输入商品名称" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input name="content" class="weui-input" placeholder="想对跑腿说什么(选填)" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells">
+    <navigator url="/page/address/set/index?from=buyAddress&name=购买地址" class="weui-cell weui-cell_address weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">购买地址</view>
+      <view class="weui-cell__bd">
+        <template wx:if="{{buyAddress}}" is="addressInfo" data="{{...buyAddress}}" />
+      </view>
+      <view class="weui-cell__ft  weui-cell__ft_in-access">
+        <view class="address-clear" wx:if="{{buyAddress}}"  data-name="buyAddress" catchtap="clearAddress"></view>
+        <view  wx:else>可指定购买地址(默认就近购买)</view>
+      </view>
+    </navigator>
+    <navigator url="/page/address/set/index?from=toAddress&name=收货地址" class="weui-cell weui-cell_address weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">收货地址</view>
+      <view class="weui-cell__bd">
+        <template wx:if="{{toAddress}}" is="addressInfo" data="{{...toAddress}}" />
+      </view>
+      <view class="weui-cell__ft  weui-cell__ft_in-access">
+        {{toAddress ? '': '请选择收获地址(必填)'}}
+      </view>
+    </navigator>
+  </view>
+  <template wx:if="{{priceInfo}}" is="priceInfo" data="{{...priceInfo}}" />
+  <view class="weui-btn-area">
+    <button class="weui-btn" disabled="{{loading || !priceInfo}}" loading="{{loading}}" type="primary" formType="submit">呼叫跑腿</button>
+  </view>
+</form>

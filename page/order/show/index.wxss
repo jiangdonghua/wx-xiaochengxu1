@@ -1,0 +1,54 @@
+/* page/order/show/index.wxss */
+
+.weui-cell_invert .weui-cell__bd{
+    color: #999;
+}
+
+.weui-cell_invert .weui-cell__ft {
+    color: initial;
+}
+
+.weui-cell_misc .weui-cell__hd {
+    min-width: 5em;
+    color: #999;
+}
+
+.actions {
+    display: flex;
+}
+
+.actions__btn {
+    flex: 1;
+    padding: 8px 0;
+    color: #25a1fa;
+    text-align: center;
+    border-top: 1rpx solid #D9D9D9;
+}
+
+.actions__btn_active {
+    background-color: #eee;
+}
+
+.order-type {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.order-type_buy {
+    background-color: #F7668B;
+}
+.order-type_buy::after {
+    content: '买';
+}
+.order-type_send {
+    background-color: #25a1fa;
+}
+.order-type_send::after {
+    content: '送';
+}

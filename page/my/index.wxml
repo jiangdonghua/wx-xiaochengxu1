@@ -1,0 +1,15 @@
+
+<!--page/my/index.wxml-->
+<view class="my-info">
+  <image src="{{userInfo.avatarUrl ? userInfo.avatarUrl : 'default.png' }}" class="my-info__avatar"></image>
+  <view class="my-info__name">{{userInfo.nickName ? userInfo.nickName : '未知' }}</view>
+  <navigator wx:if="{{!userInfo.bound_phone}}" url="/page/phone/index" class="my-info__verify">验证手机</navigator>
+  <view wx:else>{{userInfo.bound_phone}}<view class="my-info__has-verify">(已验证)</view></view>
+</view>
+<view class="weui-cells">
+  <navigator url="{{userInfo.user_id ? '/page/order/list/index' : '/page/phone/index'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我的订单</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+

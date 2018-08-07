@@ -1,0 +1,4 @@
+/* page/send/send.wxss */
+@import '../template/address.wxss';
+
+@import '../template/price.wxss';

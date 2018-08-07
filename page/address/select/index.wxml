@@ -1,0 +1,18 @@
+
+<!--page/address/select/index.wxml-->
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+    <radio-group value="{{selectedIndex}}" bindchange="selectAddress">
+      <label class="weui-media-box weui-media-box_text" wx:for="{{addressList}}" wx:key="{{index}}">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.address_name}} {{item.detail}}</view>
+        <view class="weui-media-box__desc">{{item.name}} {{item.phone}}</view>
+        <icon wx:if="{{selectedIndex == index}}" class="weui-media-box__current-icon" type="success_no_circle" size="16"></icon>
+        <radio value="{{index}}" class="weui-media-box__radio"></radio>
+      </label>
+    </radio-group>
+    <view wx:if="{{addressList.length == 0}}" class="weui-media-box weui-media-box_text weui-media-box_empty">
+      <view class="weui-media-box__title ">暂无收货地址</view>
+    </view>
+  </view>
+</view>
+<navigator url="/page/address/add/index" class="btn-add" type="primary">新增地址</navigator>

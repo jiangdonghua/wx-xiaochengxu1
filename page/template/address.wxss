@@ -1,0 +1,23 @@
+.weui-media-box_address {
+  padding: 0 2em;
+}
+
+.weui-media-box__title_in-text:last-child {
+  margin-bottom: 0;
+}
+
+.address-clear {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.address-clear:after {
+  content: '\2715';
+  display: inline-block;
+  vertical-align: middle;
+}

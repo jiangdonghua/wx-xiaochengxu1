@@ -1,0 +1,82 @@
+
+<!--page/order/show/index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">订单{{orderInfo.status_label}}</view>
+    <view class="weui-cell__ft">{{orderInfo.add_time_format}}</view>
+  </view>
+  <view class="actions">
+    <view bindtap="onCancel" wx:if="{{orderInfo.state == 1 || orderInfo.state == 2}}" class="actions__btn" hover-class="actions__btn_active" hover="true">取消订单</view>
+    <view bindtap="onPay" wx:if="{{orderInfo.state == 2}}" class="actions__btn" hover-class="actions__btn_active" hover="true">马上付款</view>
+    <view bindtap="onGiveup" wx:if="{{orderInfo.state == 8 }}" class="actions__btn" hover-class="actions__btn_active" hover="true">放弃订单</view>
+    <view bindtap="onFinish" wx:if="{{orderInfo.state == 8 || orderInfo.state == 9}}" class="actions__btn" hover-class="actions__btn_active" hover="true">完成</view>
+    <block wx:if="{{orderInfo.state == 5 && orderInfo.giveup == 2}}">
+      <view bindtap="onDisagree" class="actions__btn" hover-class="actions__btn_active" hover="true">不同意放弃</view>
+      <view bindtap="onAgree" class="actions__btn" hover-class="actions__btn_active" hover="true">同意放弃</view>
+    </block>
+  </view>
+</view>
+<view class="weui-cells__title">订单明细</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__hd"><view class="order-type order-type_{{TYPE[orderInfo.type]}}"></view></view>
+    <view class="weui-cell__bd">{{orderInfo.good_info}}</view>
+    <view class="weui-cell__ft">微信支付</view>
+  </view>
+  <view class="weui-cell weui-cell_invert">
+    <view class="weui-cell__bd">跑腿费</view>
+    <view class="weui-cell__ft">{{orderInfo.price}}元</view>
+  </view>
+</view>
+<block wx:if="{{orderInfo.receive_id}}">
+  <view class="weui-cells__title">跑腿信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_misc">
+      <view class="weui-cell__hd">昵称</view>
+      <view class="weui-cell__bd">
+        <view>{{orderInfo.receive_nick}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_misc">
+      <view class="weui-cell__hd">联系方式</view>
+      <view class="weui-cell__bd">
+        <view data-phone="{{orderInfo.receive_phone}}" bindtap="makePhoneCall">{{orderInfo.receive_phone}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+<view class="weui-cells__title">其他信息</view>
+<view class="weui-cells weui-cells_after-title">
+  <view wx:if="{{orderInfo.start_address != orderInfo.end_address}}" class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">配送距离</view>
+    <view class="weui-cell__bd">{{orderInfo.length}}千米</view>
+  </view>
+  <view class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">配送方</view>
+    <view class="weui-cell__bd">爱跑腿</view>
+  </view>
+  <view wx:if="{{orderInfo.start_address != orderInfo.end_address}}" class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">{{START_LABEL[orderInfo.type]}}</view>
+    <view class="weui-cell__bd">
+      <view data-phone="{{orderInfo.send_start_phones}}" bindtap="makePhoneCall">{{orderInfo.send_start_phones || ''}}</view>
+      <view>{{orderInfo.start_address}}</view>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">收货信息</view>
+    <view class="weui-cell__bd">
+      <view data-phone="{{orderInfo.send_finish_key_phones}}" bindtap="makePhoneCall">{{orderInfo.send_finish_key_phones || ''}}</view>
+      <view>{{orderInfo.end_address}}</view>
+    </view>
+  </view>
+  <view wx:if="{{orderInfo.content}}" class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">备注</view>
+    <view class="weui-cell__bd">
+      <view>{{orderInfo.content}}</view>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_misc">
+    <view class="weui-cell__hd">客服电话</view>
+    <view data-phone="{{orderInfo.localphone}}" bindtap="makePhoneCall" class="weui-cell__bd">{{orderInfo.localphone}}</view>
+  </view>
+</view>

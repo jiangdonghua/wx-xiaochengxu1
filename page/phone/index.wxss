@@ -1,0 +1,4 @@
+/* page/phone/index.wxss */
+.weui-vcode-btn {
+    font-size: 14px;
+}

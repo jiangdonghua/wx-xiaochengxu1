@@ -1,0 +1,29 @@
+/* page/my/index.wxss */
+
+.my-info {
+    padding: 40px 0 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #25a1fa;
+}
+.my-info__avatar {
+    width: 80px;
+    height: 80px;
+    border: 4rpx solid #fff;
+    border-radius: 50%;
+}
+
+.my-info__name {
+    font-size: 1.2rem;
+}
+
+.my-info__verify {
+    display: inline-block;
+    padding: 0 5px;
+    border: 1rpx solid #fff;
+    border-radius: 3px;
+}
+
+.my-info__has-verify {
+    font-size: 12px;
+}

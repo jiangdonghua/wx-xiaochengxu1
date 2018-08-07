@@ -1,0 +1,43 @@
+
+<!--page/info/index.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="weui-cells">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">物品类型</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <radio-group value="{{typeIndex}}" name="type" class="radio-group radio-group_type" bindchange="typeChange">
+          <label class="radio {{typeIndex == index ? 'radio_active': ''}}" wx:for="{{types}}" wx:key="{{index}}">
+            <radio value="{{index}}"  />{{item}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">重量</view>
+      </view>
+      <view class="weui-cell__bd weui-cell__bd_right">
+        <picker name="weight" bindchange="weightChange" value="{{weightIndex}}" range="{{weights}}">
+          <view class="weui-select weui-select_in-select-after weui-select_no-border">{{weights[weightIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_select ">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">物品价值</view>
+      </view>
+      <view class="weui-cell__bd weui-cell__bd_right ">
+        <picker name="price" bindchange="priceChange" value="{{priceIndex}}" range="{{prices}}">
+          <view class="weui-select weui-select_in-select-after weui-select_no-border">{{prices[priceIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" loading="{{loading}}" type="primary" formType="submit">确定</button>
+  </view>
+</form>

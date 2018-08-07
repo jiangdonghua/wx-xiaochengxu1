@@ -1,0 +1,13 @@
+/* page/address/select/index.wxss */
+@import '../list/index.wxss';
+
+.weui-media-box__current-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -10px;
+}
+
+.weui-media-box__radio {
+    display: none;
+}

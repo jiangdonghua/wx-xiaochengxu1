@@ -1,0 +1,6 @@
+<template name="addressInfo">
+  <view class="weui-media-box weui-media-box_text weui-media-box_address">
+    <view class="weui-media-box__title_in-text">{{address_name}} {{detail}}</view>
+    <view class="weui-media-box__desc" wx:if="{{name}}">{{name}} {{phone}}</view>
+  </view>
+</template>

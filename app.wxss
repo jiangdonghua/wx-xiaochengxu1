@@ -1,0 +1,46 @@
+@import 'assets/styles/weui.wxss';
+
+page{
+  background-color: #F8F8F8;
+  font-size: 16px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+button[type="primary"] {
+  background-color: #25a1fa;
+}
+button[disabled][type="primary"], button[loading][type="primary"] {
+  background-color: #62bcfc;
+}
+
+
+.button-hover[type="primary"] {
+  background-color: #2598fa;
+}
+
+.weui-cell_select {
+  overflow: hidden;
+}
+
+.weui-select_no-border {
+  border-right:none;
+}
+
+.weui-media-box {
+  display: block;
+}
+
+.weui-form-preview__btn_default {
+  color: #333;
+}
+
+.weui-form-preview__btn_primary {
+  color: #2598fa;
+}
+.weui-form-preview__btn_warn {
+  color: #E64340;
+}
+
+.weui-cell__hd {
+  white-space: nowrap;
+}

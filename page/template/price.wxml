@@ -1,0 +1,9 @@
+<template name="priceInfo">
+  <view class="price-info">
+    <view>
+      跑腿费
+      <view class="price-info__price">{{price}}</view> 元
+    </view>
+    <view wx:if="{{length}}" class="price-info__distance">距离约 {{length}} 千米</view>
+  </view>
+</template>

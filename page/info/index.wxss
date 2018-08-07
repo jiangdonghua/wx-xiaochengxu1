@@ -1,0 +1,25 @@
+/* page/info/index.wxss */
+
+.weui-cell__bd_right {
+    text-align: right;
+}
+.radio-group_type {
+    margin-top: -8px;
+}
+.radio-group_type .radio{
+    display: inline-block;
+    margin: 8px 6px 0 0;
+    padding: 0 8px;
+    border: 1rpx solid #d8d8d8;
+    border-radius: 12px/50%;
+}
+
+.radio-group_type radio {
+    display: none;
+}
+
+.radio-group_type .radio_active {
+    background-color: #FF2D4B;
+    color: #fff;
+    border-color: #FF2D4B;
+}
